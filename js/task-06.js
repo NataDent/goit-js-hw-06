@@ -6,7 +6,7 @@ const checkInputLength = () => {
     if (dataLength === inputValueLength && !inputEl.classList.contains('invalid'))
     { inputEl.classList.add('valid') }
     else if (dataLength === inputValueLength && inputEl.classList.contains('invalid')) {
-        inputEl.classList.replace('invalid','valid')
+        inputEl.classList.replace('invalid', 'valid')
     }
     else {
     inputEl.classList.add('invalid')
