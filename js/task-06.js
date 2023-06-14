@@ -1,10 +1,8 @@
-const inputEl = document.querySelector('#validation-input')
-console.log(inputEl);
-const dataLength = Number(inputEl.getAttribute('data-length'));
-console.log(dataLength);
-const inputValueLength = Number(inputEl.value.length);
+const inputEl = document.querySelector('#validation-input');
 
 const checkInputLength = () => {
+    const inputValueLength = Number(inputEl.value.length);
+    const dataLength = Number(inputEl.getAttribute('data-length'));
     if (dataLength === inputValueLength && !inputEl.classList.contains('invalid'))
     { inputEl.classList.add('valid') }
     else if (dataLength === inputValueLength && inputEl.classList.contains('invalid')) {
@@ -14,6 +12,8 @@ const checkInputLength = () => {
     inputEl.classList.add('invalid')
     }
 }
+
 inputEl.addEventListener('blur', checkInputLength);
+
 console.log(inputValueLength);
 console.dir(inputEl)
