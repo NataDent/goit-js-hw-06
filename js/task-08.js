@@ -13,5 +13,5 @@ function onSubmit(evt) {
     if (!evt.currentTarget.elements.email.value || !evt.currentTarget.elements.password.value) {
        alert('Всі поля повинні бути заповнені')
     }
-    formEl.reset();
+    evt.currentTarget.reset();
 }
