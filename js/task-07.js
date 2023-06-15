@@ -5,7 +5,7 @@ console.dir(textEl);
 
 const onInputHandler = (evt) => { 
     
-    textEl.style.fontSize = evt.currentTarget.value;
+    textEl.style.fontSize = `${evt.currentTarget.value}px`;
    
     console.log(textEl.style.fontSize)
     console.dir(evt.currentTarget.value)
