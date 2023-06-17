@@ -2,8 +2,9 @@
 const selectors = {
   spanEl: document.querySelector('.color'),
   buttonEl: document.querySelector('.change-color'),
-  bodyEl: document.querySelector('body'),
+  bodyEl: document.body,
 };
+selectors.buttonEl.addEventListener('click', onClick);
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -12,8 +13,8 @@ function getRandomHexColor() {
 }
 
 function onClick() {
-  selectors.bodyEl.style.backgroundColor = ''
-  selectors.spanEl.textContent = getRandomHexColor
+  selectors.bodyEl.style.backgroundColor = getRandomHexColor();
+  selectors.spanEl.textContent = `${getRandomHexColor()}`;
 }
 console.log(getRandomHexColor)
-// buttonEl.addEventListener('click', onClick);
+
