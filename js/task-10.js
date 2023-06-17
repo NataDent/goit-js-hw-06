@@ -12,7 +12,7 @@ console.log(btnDestroy);
 const boxEl = document.querySelector('#boxes');
 console.log(boxEl);
 btnCreate.addEventListener('click', createBoxes);
-
+btnDestroy.addEventListener('click', boxEl.innerHTML(''));
 function createBoxes(amount) {
   const size = 30;
  const markup = `<div width=${size}px heigt =${size}px></div>`
