@@ -12,11 +12,11 @@ console.log(btnDestroy);
 const boxEl = document.querySelector('#boxes');
 console.log(boxEl);
 btnCreate.addEventListener('click', onBtnCreateClick);
-btnDestroy.addEventListener('click', onBtndestroyClick);
+btnDestroy.addEventListener('click', onBtnDestroyClick);
 
 function onBtnCreateClick(evt) {
-  evt.currentTarget.value = amount;
-return boxEl.createBoxes(amount)
+  const amount = inputEl.value;
+  createBoxes(amount);
 }
 
 function createBoxes(amount) {
@@ -25,10 +25,13 @@ function createBoxes(amount) {
 
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement(div);
-    arr.push(el[i]);
+    div.style.width = `${size}px`
+    div.style.height = `${size}px`
+    div.style.backgroundColor = getRandomHexColor()
+    arr.push(div);
     size += 10;
   } 
-  boxEl.insertAdjacentHTML('beforeend', `<div width="${size}" height="${size}" background-color="${getRandomHexColor()}"></div>`)
+  boxEl.append(...arr)
 }
 
 function onBtnDestroyClick() {
