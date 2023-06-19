@@ -11,13 +11,15 @@ const btnDestroy = document.querySelector('button[data-destroy]');
 console.log(btnDestroy);
 const boxEl = document.querySelector('#boxes');
 console.log(boxEl);
-btnCreate.addEventListener('click', onBtnCreateClick);
+btnCreate.addEventListener('click', onBtnCreateClick)
 btnDestroy.addEventListener('click', onBtnDestroyClick);
 
 function onBtnCreateClick(evt) {
   const amount = inputEl.value;
-  createBoxes(amount);
-}
+  
+   createBoxes(amount);
+    console.log(evt);
+  }
 
 function createBoxes(amount) {
   const size = 30;
@@ -34,8 +36,9 @@ function createBoxes(amount) {
   boxEl.append(...arr)
 }
 
-function onBtnDestroyClick() {
-  boxEl.destoyBoxes();
+function onBtnDestroyClick(e) {
+  destoyBoxes();
+  console.log(e)
 }
 function destoyBoxes() {
   boxEl.innerHTML('');
