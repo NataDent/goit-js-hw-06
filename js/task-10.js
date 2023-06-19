@@ -11,13 +11,31 @@ const btnDestroy = document.querySelector('button[data-destroy]');
 console.log(btnDestroy);
 const boxEl = document.querySelector('#boxes');
 console.log(boxEl);
-btnCreate.addEventListener('click', createBoxes);
-btnDestroy.addEventListener('click', boxEl.innerHTML(''));
+btnCreate.addEventListener('click', onBtnCreateClick);
+btnDestroy.addEventListener('click', onBtndestroyClick);
+
+function onBtnCreateClick(evt) {
+  evt.currentTarget.value = amount;
+return boxEl.createBoxes(amount)
+}
+
 function createBoxes(amount) {
   const size = 30;
- const markup = `<div width=${size}px heigt =${size}px></div>`
-  for (let index = 1; index <= amount; index += 1) {
-    boxEl.insertAdjacentHTML('beforeend', markup)
-  }
-  console.log(markup)
+  const arr = [];
+
+  for (let i = 0; i < amount; i += 1) {
+    const div = document.createElement(div);
+    arr.push(el[i]);
+    size += 10;
+  } 
+  boxEl.insertAdjacentHTML('beforeend', `<div width="${size}" height="${size}" background-color="${getRandomHexColor()}"></div>`)
 }
+
+function onBtnDestroyClick() {
+  boxEl.destoyBoxes();
+}
+function destoyBoxes() {
+  boxEl.innerHTML('');
+}
+  
+  
