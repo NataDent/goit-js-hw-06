@@ -11,9 +11,10 @@ const checkInputLength = () => {
     else {
     inputEl.classList.add('invalid')
     }
+    console.log(inputValueLength)
 }
 
 inputEl.addEventListener('blur', checkInputLength);
 
-console.log(inputValueLength);
+
 console.dir(inputEl)
