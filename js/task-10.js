@@ -22,26 +22,28 @@ function onBtnCreateClick(evt) {
   }
 
 function createBoxes(amount) {
-  const size = 30;
   const arr = [];
 
   for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement(div);
-    div.style.width = `${size}px`
-    div.style.height = `${size}px`
+    const div = document.createElement('div');
+    div.style.width = `${30+10*i}px`
+    div.style.height = `${30+10*i}px`
     div.style.backgroundColor = getRandomHexColor()
     arr.push(div);
-    size += 10;
   } 
   boxEl.append(...arr)
 }
 
 function onBtnDestroyClick(e) {
+  
   destoyBoxes();
+  inputEl.value = '';
   console.log(e)
 }
-function destoyBoxes() {
-  boxEl.innerHTML('');
+function destoyBoxes() { 
+  boxEl.innerHTML = '';
 }
+
+ 
   
   
